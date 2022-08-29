@@ -38,7 +38,7 @@ class TV:
         return self._volumen
 
     def setCanal(self,canal):
-        if canal>=0 and canal<=7 and self.estado== True:
+        if canal>=0 and canal<=120 and self.estado== True:
             self._canal=canal
     def getCanal(self):
         return self._canal
