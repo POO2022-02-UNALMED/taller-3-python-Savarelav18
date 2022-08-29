@@ -1,22 +1,16 @@
-class Marca:
-    def __init__(self,nombre):
-        self.nombre = nombre
-    def setNombre(self,nombre):
-        self.nombre=nombre
-    def getNombre(self):
-        return self.nombre
-
-      
+from control import Control
+from marca import Marca
 class TV: 
     _canal=1
     _precio=500
     _volumen=1
-    _control= Control
+    control= Control
     _marca=Marca
     numTV=0
     def __init__(self,marca:Marca,estado):
         self.marca=marca
         self.estado=estado
+        
         
         self.numTV+=1
     
@@ -68,33 +62,3 @@ class TV:
     def volumenDown(self):
         if self.estado ==True and self.volumen >=1:
             self.volumen-=1
-
-
-class Control:
-    _tv = TV
-
-    def turnOn(self):
-        self.tv.turnOn()
-    def turnOff(self):
-        self.tv.turnOff()
-
-    def canalUp(self):
-        self.tv.canalUp
-    def canalDown(self):
-        self.tv.canalDown
-
-    def volumenUp(self):
-        self.tv.volumenUp
-    def volumenDown(self):
-        self.tv.volumenDown
-    
-    def enlazar(self,tv:TV):
-        self.tv=tv
-        self.tv.setControl(self)
-        
-        
-
-
-        
-        
-
